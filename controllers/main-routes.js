@@ -25,6 +25,7 @@ router.get('/posts', async (req, res) => {
 
 		res.render('homepage', {
 			posts,
+			user: req.session.user
 		});
 	} catch (err) {
 		console.log(err);
