@@ -1,0 +1,80 @@
+/* Reset some default styles and set a basic font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ddd;
+    
+};
+
+.userOptions{
+    color: yellow;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+   background-color: #444;
+}
+
+/* Header styles */
+header {
+    background-color: #333; /* Header background color */
+    color: #fff; /* Header text color */
+    padding: 20px;
+}
+
+/* Navigation bar styles */
+nav {
+    background-color: #444; /* Navigation background color */
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Main content container styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+/* Post styles */
+.post {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.post h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.post p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
