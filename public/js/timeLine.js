@@ -2,7 +2,7 @@ let data = {
 
     title : "WAZZAM",
     content: "Welcome to WAZZAM, where you can charge your social battery!",
-    date: currentDate(),
+    date: getCurrentDate(),
 };
 
 // Formatting the current date and making blog-post-template
@@ -22,11 +22,11 @@ const html = template(date);
 
 document.getElementById("wazzam-container").innerHTML = html;
 
-function createNewBlogPost(newTitle, newcontent){
+function createNewBlogPost(newTitle, newContent){
     data = {
         title: newTitle, 
         content: newContent,
-        date: currentDate(), //setting new date 
+        date: getCurrentDate(), //setting new date 
     
 };
 
@@ -39,7 +39,9 @@ document.getElementById("wazzam-container").innerHTML = updatedHtml;
 
 }
 
+// new blog post in response to user action.
 
+createNewBlogPost("New Blog Post Title", "This is the content of the new blog post.");
 
 
 
