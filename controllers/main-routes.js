@@ -1,6 +1,7 @@
 // imports express module and user, post
 const router = require('express').Router();
 const { User, Post } = require('../models');
+const sequelize = require('../config/connection');
 
 // get all posts for homepage
 router.get('/posts', async (req, res) => {
@@ -10,6 +11,10 @@ router.get('/posts', async (req, res) => {
 				{
 					model: Post,
 					attributes: ['username', 'time-stamp', 'message'],
+					include: {
+						model: User,
+						attributes: ['username'],
+					}
 				},
 			],
 		});
@@ -20,6 +25,7 @@ router.get('/posts', async (req, res) => {
 
 		res.render('homepage', {
 			posts,
+			user: req.session.user
 		});
 	} catch (err) {
 		console.log(err);
