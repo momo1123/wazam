@@ -29,7 +29,6 @@
       "strongpassword": "^1.1.4"
    },
    "devDependencies": {
-      "eslint": "^8.48.0",
-      "eslint-plugin-github": "^4.10.0"
+      "eslint": "^8.48.0"
    }
 }

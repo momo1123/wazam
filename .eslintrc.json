@@ -4,8 +4,20 @@
       "browser": true,
       "commonjs": true,
       "node": true,
-      "es6": true
+      "es6": true,
+      "es2017": true
    },
-   "plugins": ["github", "prettier"],
-   "extends": ["plugin:github/recommended", "plugin:prettier/recommended"]
+   "rules": {
+      "no-empty": "error",
+      "indent": ["error", 3],
+      "no-undef-init": "error",
+      "no-extra-semi": "error",
+      "no-func-assign": "error",
+      "no-unreachable": "error",
+      "semi": ["error", "always"],
+      "no-duplicate-case": "error",
+      "no-empty-function": "error",
+      "quotes": ["error", "single"]
+   },
+   "extends": ["prettier"]
 }
