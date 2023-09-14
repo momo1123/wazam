@@ -1,5 +1,5 @@
 // imports user and post modules
-const Post = require('./Post.js');
+const Post = require('./Post');
 const User = require('./User');
 // defines one-to-many
 User.hasMany(Post, {

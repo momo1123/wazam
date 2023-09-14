@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const { EmptyResultError, Model, DataTypes } = require('sequelize');
 const StrongPassword = require('strongpassword');
 // const strongpassword = require('strongpassword');
-// // const sequelize = require('../config/connection');
+const sequelize = require('../config/connection');
 
 // class MightyPassword extends User{
 //   check_strength(loginPw){
@@ -54,8 +54,8 @@ class User extends Model {
       });
    }
 }
-newUser = new User();
-newUser.checkPassword();
+// newUser = new User();
+// newUser.checkPassword();
 
 User.init(
    {
