@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 // configures the handling of the session
 const sess = {
-   secret: '',
+   secret: 'Secret',
    cookie: {},
    resave: false,
    saveUninitialized: true,

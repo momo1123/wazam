@@ -64,16 +64,16 @@ User.init(
          primaryKey: true,
          autoIncrement: true,
       },
-      user_name: {
+      name: {
          type: DataTypes.STRING,
          allowNull: false,
       },
-      user_email: {
+      email: {
          type: DataTypes.STRING,
          allowNull: false,
          unique: true,
       },
-      user_password: {
+      password: {
          type: DataTypes.STRING,
          allowNull: false,
       },
