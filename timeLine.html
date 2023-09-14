@@ -12,6 +12,7 @@
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
 </head>
+<script id="wazzam-template" type="text/x-handlebars-template"></script>
 <body class="w3-light-grey">
 
 <!-- w3-content defines a container for fixed size centered content, 
@@ -119,7 +120,19 @@ and is wrapped around the whole page content, except for the footer in this exam
     </ul>
   </div>
   <hr> 
+
+  <div id="timeline-container">
+
+  </div>
  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+  <script>
+    var source = document.getElementById("wazzam-template").innerHTML;
+
+    const Wazzamtemplate = Handlebars.compile(source);
+
+    var 
+  </script>
   <!-- Labels / tags -->
   <div class="w3-card w3-margin">
     <div class="w3-container w3-padding">
