@@ -1,0 +1,34 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure at least full viewport height */
+    margin: 0;
+    background-color: gray;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .container {
+    text-align: center; /* Center-align content within this container */
+  }
+  
+  a {
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #000;
+    margin: 5px;
+  }
+  
+  /* Increase the size of the lightning bolt icon */
+  i.fa-bolt {
+    font-size: 48px;
+    margin-bottom: 10px;
+  }
+  
