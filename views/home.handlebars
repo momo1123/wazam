@@ -1,61 +1,49 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
-
-<style>
-body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-</style>
-</head>
-<body class="w3-light-grey">
-
 <!-- w3-content defines a container for fixed size centered content, 
 and is wrapped around the whole page content, except for the footer in this example -->
 <div class="w3-content" style="max-width:1400px">
 
-<!-- Header -->
-<header class="w3-container w3-center w3-padding-32"> 
-  <h1><b>MY BLOG</b></h1>
-  <p>Welcome to the blog of <span class="w3-tag">unknown</span></p>
-</header>
+	<!-- Header -->
+	<header class="w3-container w3-center w3-padding-32">
+		<h1><b>MY BLOG</b></h1>
+		<p>Welcome to the blog of <span class="w3-tag">unknown</span></p>
+	</header>
 
-<!-- Grid -->
-<div class="w3-row">
+	<!-- Grid -->
+	<div class="w3-row">
 
-<!-- Blog entries -->
-<div class="w3-col l8 s12">
-  <!-- Blog entry -->
-  <div class="w3-card-4 w3-margin w3-white">
-    
-    <div class="blogDescription">
-      <h3><b>{{title}}WAZZAM</b></h3>
-      <h5>{{content}}, <span class="w3-opacity">{{date}}</span></h5>
-    </div>
+		<!-- Blog entries -->
+		<div class="w3-col l8 s12">
+			<!-- Blog entry -->
+			<div class="w3-card-4 w3-margin w3-white">
 
-    <div class="post">
-      <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed
-        tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
-        </div>
-        <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <hr>
-</script>
+				<div class="blogDescription">
+					<h3><b>{{title}}WAZZAM</b></h3>
+					<h5>{{content}}, <span class="w3-opacity">{{date}}</span></h5>
+				</div>
 
-  <!-- Blog entry -->
-  <!--Handlebars template here-->
-  <script id ="wazzam-template" type="text/x-handlebars-template">
+				<div class="post">
+					<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod
+						placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non
+						congue ullam corper. Praesent tincidunt sed
+						tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non
+						fringilla.</p>
+					<div class="w3-row">
+						<div class="w3-col m8 s12">
+							<p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
+						</div>
+						<div class="w3-col m4 w3-hide-small">
+							<p><span class="w3-padding-large w3-right"><b>Comments{{content}}  </b> <span
+										class="w3-tag">0</span></span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr>
+			</script>
+
+			<!-- Blog entry -->
+			<!--Handlebars template here-->
+			<script id="wazzam-template" type="text/x-handlebars-template">
   <div class="w3-card-4 w3-margin w3-white">
   <img src="/w3images/bridge.jpg" alt="Norway" style="width:100%">
     <div class="w3-container">
@@ -155,51 +143,49 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 
 <script>
-let data = {
+	let data = {
 
-    title : "WAZZAM",
-    content: "Welcome to WAZZAM, where you can charge your social battery!",
-    date: getCurrentDate(),
-};
+		title: "WAZZAM",
+		content: "Welcome to WAZZAM, where you can charge your social battery!",
+		date: getCurrentDate(),
+	};
 
-// Formatting the current date and making blog-post-template
-function getCurrentDate() {
-    var now = new Date()
-    return now.toLocaleDateString("en-US",{
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-    });
-}
+	// Formatting the current date and making blog-post-template
+	function getCurrentDate() {
+		var now = new Date()
+		return now.toLocaleDateString("en-US", {
+			year: "numeric",
+			month: "long",
+			day: "numeric",
+		});
+	}
 
-//rendering a new blog-post template when new post is made. still keeping the template the same
-var source = document.getElementById("wazzam-template").innerHTML;
-const template = Handlebars.compile(source);
-const html = template(data);
+	//rendering a new blog-post template when new post is made. still keeping the template the same
+	var source = document.getElementById("wazzam-template").innerHTML;
+	const template = Handlebars.compile(source);
+	const html = template(data);
 
-document.getElementById("wazzam-container").innerHTML = html;
+	document.getElementById("wazzam-container").innerHTML = html;
 
-function createNewBlogPost(newTitle, newContent){
-    data = {
-        title: newTitle, 
-        content: newContent,
-        date: getCurrentDate(), //setting new date 
-    
-};
+	function createNewBlogPost(newTitle, newContent) {
+		data = {
+			title: newTitle,
+			content: newContent,
+			date: getCurrentDate(), //setting new date 
 
-//  Re-render the blog post template
-let updatedHtml = template(data);
+		};
 
-// DOM insertion for updated HTML 
+		//  Re-render the blog post template
+		let updatedHtml = template(data);
 
-document.getElementById("wazzam-container").innerHTML = updatedHtml;
+		// DOM insertion for updated HTML 
+
+		document.getElementById("wazzam-container").innerHTML = updatedHtml;
 
 
-}
+	}
 
-// new blog post in response to user action.
+	// new blog post in response to user action.
 
-createNewBlogPost("New Blog Post Title", "This is the content of the new blog post.");
+	createNewBlogPost("New Blog Post Title", "This is the content of the new blog post.");
 </script>
-</body>
-</html>
