@@ -1,81 +1,73 @@
-
-    <header class="w3-container w3-center w3-padding-32"> 
-        <h1 class="animated-header"><b>WAZZAM</b></h1>
-        <p>Charge your social battery! <i class="fas fa-bolt"></i></p>
-    </header>
-​
-    <div class="w3-content" style="max-width: 1400px">
-        <div id="wazzam-container"></div>
-​
-        <div class="w3-row">
-            <main class="w3-col l8 s12">
-                <article class="w3-card-4 w3-margin w3-white">
-                    <div class="content">
-                        <h2><b>TITLE HEADING</b></h2>
-                        <p class="w3-opacity">April 7, 2014</p>
-                    </div>
-​
-                    <div class="content">
-                        <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-                        <div class="w3-row">
-                            <div class="w3-col m8 s12">
-                                <button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button>
-                            </div>
-                            <div class="w3-col m4 w3-hide-small">
-                                <p><b>Comments</b> <span class="w3-badge">0</span></p>
-                            </div>
+<header class="w3-container w3-center w3-padding-32">
+    <h1 class="animated-header"><b>WAZZAM</b></h1>
+    <p>Charge your social battery! <i class="fas fa-bolt"></i></p>
+</header>
+<div class="w3-content" style="max-width: 1400px">
+    <div id="wazzam-container"></div>
+    <div class="w3-row">
+        <main class="w3-col l8 s12">
+            {{#each posts}}
+            <article class="w3-card-4 w3-margin w3-white">
+                <div class="content">
+                    <h2><b>{{title}}</b></h2>
+                    <p class="w3-opacity">{{time}}</p>
+                </div>
+                <div class="content">
+                    <p>{{message}}</p>
+                    <div class="w3-row">
+                        <div class="w3-col m8 s12">
+                            <button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button>
+                        </div>
+                        <div class="w3-col m4 w3-hide-small">
+                            <!-- todo: make this dynamic with a javascript file -->
+                            <p><b>Comments</b> <span class="w3-badge">0</span></p>
                         </div>
                     </div>
-                </article>
-                <hr>
-​
-                <!-- Repeat the above article block for other blog entries -->
-​
-            </main>
-​
-            <aside class="w3-col l4">
-                <div class="w3-card w3-margin w3-margin-top">
-                    <script id="wazzam-template" type="text/x-handlebars-template"></script>
-                    <div class="content">
-                        <h4><b>My Name</b></h4>
-                        <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest in lorem ipsum and mauris neque quam blog. I want to share my world with you.</p>
-                    </div>
                 </div>
-                <hr>
-​
-                <div class="w3-card w3-margin">
-                    <div class="content">
-                        <h4>Popular Posts</h4>
-                    </div>
-                    <ul class="w3-ul w3-hoverable w3-white">
-                        <li class="w3-padding-16">
-                            <span class="w3-large">Lorem</span><br>
-                            <span>Sed mattis nunc</span>
-                        </li>
-                        <!-- Repeat similar list items for other popular posts -->
-                    </ul>
+            </article>
+            {{/each}}
+            <hr>
+            <!-- Repeat the above article block for other blog entries -->
+        </main>
+        <aside class="w3-col l4">
+            <div class="w3-card w3-margin w3-margin-top">
+                <script id="wazzam-template" type="text/x-handlebars-template"></script>
+                <div class="content">
+                    <h4><b>My Name</b></h4>
+                    <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an
+                        interest in lorem ipsum and mauris neque quam blog. I want to share my world with you.</p>
                 </div>
-                <hr> 
-                
-​
-                <div class="w3-card w3-margin">
-                    <div class="content">
-                        <h4></h4>
-                    </div>
-                    <div class="content">
-                        <!-- Add your tags here -->
-                    </div>
+            </div>
+            <hr>
+            <div class="w3-card w3-margin">
+                <div class="content">
+                    <h4>Popular Posts</h4>
                 </div>
-            </aside>
-        </div>
+                <ul class="w3-ul w3-hoverable w3-white">
+                    <li class="w3-padding-16">
+                        <span class="w3-large">Lorem</span><br>
+                        <span>Sed mattis nunc</span>
+                    </li>
+                    <!-- Repeat similar list items for other popular posts -->
+                </ul>
+            </div>
+            <hr>
+            <div class="w3-card w3-margin">
+                <div class="content">
+                    <h4></h4>
+                </div>
+                <div class="content">
+                    <!-- Add your tags here -->
+                </div>
+            </div>
+        </aside>
     </div>
-​
-    <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-        <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
-        <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
-        <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-    </footer>
-​
-    <script>
-        // Your JavaScript code here
-    </script>
+</div>
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+    <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
+    <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+<script>
+    // todo: javaScript code here if any, or at top with async keyword
+</script>
