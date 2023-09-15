@@ -14,7 +14,7 @@ Post.init(
       },
       // adds the body
       message: {
-         type: DataTypes.STRING,
+         type: DataTypes.STRING(600),
          allowNull: false,
          defaultValue: '',
       },
@@ -43,7 +43,7 @@ Post.init(
       underscored: true,
       modelName: 'post',
       freezeTableName: true,
-   }
+   },
 );
 
 module.exports = Post;
