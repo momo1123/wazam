@@ -10,8 +10,28 @@
    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
    <link rel="icon" href="/assets/svg/bolt-lightning-solid.svg" type="image/x-icon">
    <!-- lins the css file for additional styling -->
-   <link rel="stylesheet" href="/css/timeLine.css">
    <script async src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+   <script>
+      // creates a variable for path name and css path
+      let pathname = window.location.pathname;
+      let cssFilePath = null;
+      // this is for debugging purposes
+      console.log(`pathname: ${pathname}`);
+      // changes css path based on url path
+      if (pathname == "/") {
+         cssFilePath = "/css/wazzamStart.css";
+      } else if (pathname == "/home") {
+         cssFilePath = "/css/timeLine.css";
+      }
+      // writes html link to the html document using appropriate css path
+      // creates the link element
+      var linkElement = document.createElement('link');
+      linkElement.rel = 'stylesheet';
+      linkElement.href = cssFilePath;
+
+      // appends the link element to the head section
+      document.head.appendChild(linkElement);
+   </script>
    <style>
       body {
          font-family: "Roboto", sans-serif;

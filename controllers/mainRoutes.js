@@ -3,8 +3,13 @@ const router = require('express').Router();
 const { User, Post } = require('../models');
 const withAuth = require('../utils/auth');
 
+// get the root page
+router.get('/', (req, res) => {
+   res.render('start');
+});
+
 // get all posts for homepage
-router.get('/', async (req, res) => {
+router.get('/home', async (req, res) => {
    try {
       const data = await Post.findAll({
          include: {
