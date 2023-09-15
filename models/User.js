@@ -1,4 +1,4 @@
-// // const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const { EmptyResultError, Model, DataTypes } = require('sequelize');
 const StrongPassword = require('strongpassword');
@@ -10,50 +10,54 @@ const sequelize = require('../config/connection');
 //     console.log(log)
 //   }
 
+// class MightyPassword extends User {
+//    check_strength(loginPw) {
+//       console.log(log);
+//    }
 // }
 // let strongPasswordValidation = new strongpassword({
-//   password: newUser.login,
-//   locale:   'en_US',
-//   minimumLength: 10,
-//   minimumWords:  4,
-//   numbers:      (true),
-//   lowercase:    (true),
-//   uppercase:    (true),
-// })
+//    password: newUser.login,
+//    locale: 'en_US',
+//    minimumLength: 10,
+//    minimumWords: 4,
+//    numbers: true,
+//    lowercase: true,
+//    uppercase: true,
+// });
 // console.log(strongPasswordValidation.isStrong);
-// class User {
-//   checkPassword(loginPw) {
-//     return bcrypt.compareSync(loginPw, this.password);
-//   }
-// }
+class User extends Model {
+   checkPassword(loginPw) {
+      return bcrypt.compareSync(loginPw, this.password);
+   }
+}
 
 // This is for testing, it will change once variables are set for the password
 // In this example I am using simply using variables to check the strength in a class
-class User extends Model {
-   checkPassword(loginPw) {
-      let newLoginPassword = 'Hello This is Awesome 58423';
-      loginPw = newLoginPassword;
-      newLoginPassword = new StrongPassword({
-         password: loginPw,
-         locale: 'en_US',
-         minimumLength: 10,
-         numbers: true,
-         lowercase: true,
-         uppercase: true,
-      });
-      console.log('Password Strong:', '[' + newLoginPassword.isStrong + '] \n');
-      console.log(newLoginPassword.password + '\n');
-      // Testing the hash value with the plain text
-      let plainPassword = 'fuubaar';
-      bcrypt.hash(plainPassword, 4, function (err, hash) {
-         console.log(hash + '\n');
-         console.log(
-            'Text matches hash',
-            '[' + bcrypt.compareSync(plainPassword, hash) + '] \n'
-         );
-      });
-   }
-}
+// class User extends Model {
+//    checkPassword(loginPw) {
+//       let newLoginPassword = 'Hello This is Awesome 58423';
+//       loginPw = newLoginPassword;
+//       newLoginPassword = new StrongPassword({
+//          password: loginPw,
+//          locale: 'en_US',
+//          minimumLength: 10,
+//          numbers: true,
+//          lowercase: true,
+//          uppercase: true,
+//       });
+//       console.log('Password Strong:', '[' + newLoginPassword.isStrong + '] \n');
+//       console.log(newLoginPassword.password + '\n');
+//       // Testing the hash value with the plain text
+//       let plainPassword = 'fuubaar';
+//       bcrypt.hash(plainPassword, 10, function (err, hash) {
+//          console.log(hash + '\n');
+//          console.log(
+//             'Text matches hash',
+//             '[' + bcrypt.compareSync(plainPassword, hash) + '] \n'
+//          );
+//       });
+//    }
+// }
 // newUser = new User();
 // newUser.checkPassword();
 
@@ -65,16 +69,16 @@ User.init(
          primaryKey: true,
          autoIncrement: true,
       },
-      user_name: {
+      name: {
          type: DataTypes.STRING,
          allowNull: false,
       },
-      user_email: {
+      email: {
          type: DataTypes.STRING,
          allowNull: false,
          unique: true,
       },
-      user_password: {
+      password: {
          type: DataTypes.STRING,
          allowNull: false,
       },

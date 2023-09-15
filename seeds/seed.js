@@ -11,8 +11,13 @@ const userData = [
 // adds a sample post
 const postData = [
    {
+<<<<<<< HEAD
       date: new Date().toLocaleString(),
       body: 'Hello World!',
+=======
+      time: new Date().toLocaleString(),
+      message: 'Hello World!',
+>>>>>>> main
       title: 'First Message',
       user_id: 1,
    },
@@ -27,9 +32,12 @@ const seedDatabase = async () => {
    await Post.bulkCreate(postData, {
       returning: true,
    });
+<<<<<<< HEAD
    await Comment.bulkCreate(commentData, {
       returning: true,
    });
+=======
+>>>>>>> main
    process.exit(0);
 };
 

@@ -1,12 +1,17 @@
 // imports express module and user, post
 const router = require('express').Router();
 const { User, Post } = require('../models');
+<<<<<<< HEAD
 const sequelize = require('../config/connection');
+=======
+const withAuth = require('../utils/auth');
+>>>>>>> main
 
 // get all posts for homepage
 router.get('/', async (req, res) => {
    try {
       const data = await Post.findAll({
+<<<<<<< HEAD
          include: [
             {
                model: Post,
@@ -17,6 +22,11 @@ router.get('/', async (req, res) => {
                },
             },
          ],
+=======
+         include: {
+            model: User,
+         },
+>>>>>>> main
       });
 
       const postsFlat = data.map((post) => post.get({ plain: true }));

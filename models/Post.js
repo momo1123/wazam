@@ -19,9 +19,16 @@ Post.init(
          defaultValue: '',
       },
       // adds the date
+<<<<<<< HEAD
       date: {
          type: DataTypes.STRING,
          allowNull: false,
+=======
+      time: {
+         type: DataTypes.STRING,
+         allowNull: false,
+         defaultValue: '',
+>>>>>>> main
       },
       // adds the title of the post
       title: {
