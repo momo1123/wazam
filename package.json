@@ -1,32 +1,33 @@
 {
    "name": "wazzam",
    "version": "1.0.0",
-   "description": "simple message board",
+   "description": "Simple Blogging App",
    "main": "server.js",
    "scripts": {
       "start": "node server.js",
       "seed": "node seeds/seed.js",
-      "watch": "nodemon server.js"
+      "watch": "nodemon server.js",
+      "sql": "mysql -u root -p wazzam_db"
    },
    "keywords": [],
    "author": "khalilb2000, ktortolini, momo1123, muddabirm",
    "license": "GNU GPL v3",
    "dependencies": {
       "bcrypt": "^5.1.1",
-      "connect-session-sequelize": "^7.1.7",
+      "mysql2": "^3.6.0",
       "dotenv": "^16.3.1",
+      "moment": "^2.29.4",
+      "nodemon": "^3.0.1",
+      "express": "^4.18.2",
+      "prettier": "^3.0.3",
+      "handlebars": "^4.7.8",
+      "sequelize": "^6.32.1",
+      "strongpassword": "^1.1.4",
+      "express-session": "^1.17.3",
+      "express-handlebars": "^7.1.2",
       "eslint-config-prettier": "^9.0.0",
       "eslint-plugin-prettier": "^5.0.0",
-      "express": "^4.18.2",
-      "express-handlebars": "^7.1.2",
-      "express-session": "^1.17.3",
-      "handlebars": "^4.7.8",
-      "moment": "^2.29.4",
-      "mysql2": "^3.6.0",
-      "nodemon": "^3.0.1",
-      "prettier": "^3.0.3",
-      "sequelize": "^6.32.1",
-      "strongpassword": "^1.1.4"
+      "connect-session-sequelize": "^7.1.7"
    },
    "devDependencies": {
       "eslint": "^8.48.0"
