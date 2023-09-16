@@ -11,7 +11,11 @@ const userData = [
 // adds a sample post
 const postData = [
    {
-      time: new Date().toLocaleString(),
+      time: new Date().toLocaleDateString('en-US', {
+         year: 'numeric',
+         month: 'long',
+         day: 'numeric',
+      }),
       message:
          'Superman, the very first super hero, is in a battle like never before, as he confronts his evil twin from a parallel universe. This doppelgänger has the same incredible powers, but uses them to accomplish sinister goals. With the fate of their respective worlds hanging in the balance, Superman must tap into his inner strength and outsmart his malevolent counterpart to restore peace and protect his beloved Earth.',
       title: 'SuperMan vs. Superman',

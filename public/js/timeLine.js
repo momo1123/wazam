@@ -6,15 +6,14 @@ let data = {
 
 // Formatting the current date and making blog-post-template
 function getCurrentDate() {
-   var now = new Date();
-   return now.toLocaleDateString('en-US', {
+   return new Date().toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
    });
 }
 
-//rendering a new blog-post template when new post is made. still keeping the template the same
+// rendering a new blog-post template when new post is made. still keeping the template the same
 var source = document.getElementById('wazzam-template').innerHTML;
 const template = Handlebars.compile(source);
 const html = template(date);
@@ -28,17 +27,15 @@ function createNewBlogPost(newTitle, newContent) {
       date: getCurrentDate(), //setting new date
    };
 
-   //  Re-render the blog post template
+   //  re-renders the blog post template
    let updatedHtml = template(data);
 
    // DOM insertion for updated HTML
-
    document.getElementById('wazzam-container').innerHTML = updatedHtml;
 }
 
 // new blog post in response to user action.
-
 createNewBlogPost(
    'New Blog Post Title',
-   'This is the content of the new blog post.'
+   'This is the content of the new blog post.',
 );
