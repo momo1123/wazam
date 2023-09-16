@@ -58,5 +58,14 @@ router.get('/loginPage', (req, res) => {
  
    res.render('login');
  });
-
+// User signup route if already existed
+ router.get('/signup', (req, res) => {
+   // If the user is already logged in, redirect the request to another route
+   if (req.session.exists) {
+     res.redirect('/home');
+     return;
+   }
+ 
+   res.render('signup');
+ });
 module.exports = router;
