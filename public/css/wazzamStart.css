@@ -1,33 +1,37 @@
 body {
+   margin: 0;
    display: flex;
+   /* flex attributes */
    flex-direction: column;
    justify-content: center;
+   /* other attributes */
    align-items: center;
-   min-height: 100vh; /* Ensure at least full viewport height */
-   margin: 0;
-   background-color: gray;
-   color: white;
+   color: hsl(0, 0%, 100%);
+   background-color: hsl(0, 0%, 50.2%);
    font-family: 'Times New Roman', Times, serif;
+   min-height: 100vh; /* ensures at least full viewport height */
 }
 
 h1 {
-   font-size: 24px;
-   margin-bottom: 20px;
+   font-size: 1.5rem;
+   margin-bottom: 1.25rem;
 }
 
 .container {
-   text-align: center; /* center-aligns content within this container */
+   text-align: center;
+   border-radius: 0.625rem;
+   box-shadow: 0 0.125rem 0.25rem hsla(0, 0%, 0%, 0.2);
 }
 
 a {
+   margin: 0.3125rem;
    text-decoration: none;
-   padding: 10px 20px;
-   border: 1px solid #000;
-   margin: 5px;
+   padding: 0.625rem 1.25rem;
+   border: 0.0625rem solid hsl(0, 0%, 0%);
 }
 
 /* increases the size of the lightning bolt icon */
 i.fa-bolt {
-   font-size: 48px;
-   margin-bottom: 10px;
+   font-size: 3rem;
+   margin-bottom: 0.625rem;
 }
