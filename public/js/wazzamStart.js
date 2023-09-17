@@ -1,10 +1,13 @@
 // this is for debugging purposes
 console.log('DOMContentLoaded, () => {...}');
 const superman =
-   document.querySelector('.superman') || document.querySelector('.batman');
+   document.querySelector('.superman') ||
+   document.querySelector('.batman') ||
+   document.querySelector('.deadshot');
 const container =
    document.querySelector('.backdrop-01') ||
-   document.querySelector('.backdrop-02');
+   document.querySelector('.backdrop-02') ||
+   document.querySelector('.backdrop-03');
 let delayListener;
 // adds an event listener for movement of the mouse
 const attachListener = () => {
