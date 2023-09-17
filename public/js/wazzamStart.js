@@ -1,7 +1,10 @@
 // this is for debugging purposes
 console.log('DOMContentLoaded, () => {...}');
-const superman = document.querySelector('.superman');
-const container = document.querySelector('.backdrop');
+const superman =
+   document.querySelector('.superman') || document.querySelector('.batman');
+const container =
+   document.querySelector('.backdrop-01') ||
+   document.querySelector('.backdrop-02');
 // adds an event listener for movement of the mouse
 container.addEventListener('mousemove', (event) => {
    // this is for debugging purposes
