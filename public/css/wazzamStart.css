@@ -81,7 +81,7 @@ h1 {
    /* positions object */
    position: absolute;
    /* size and starting point */
-   top: 14rem;
+   top: 0;
    left: 0;
    /* sets behind */
    z-index: -1;
