@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
 // get all posts for homepage
 router.get('/home', async (req, res) => {
    // this is for debugging purposes
-   console.log('session', req.session);
+   console.log('async (req, res) => {...}', req.session);
    try {
       // finds all of the posts
       const data = await Post.findAll({
@@ -48,7 +48,6 @@ router.get('/home', async (req, res) => {
       res.status(500).json(err);
    }
 });
-
 // get a single post for the create post page
 router.get('/post/:id', async (req, res) => {
    try {
