@@ -16,28 +16,25 @@
       let pathname = window.location.pathname;
       let cssFilePath = null;
       // this is for debugging purposes
-      console.log(`pathname: ${pathname}`);
+      console.log(`pathname = window.location.${pathname}`);
       // changes css path based on url path
       if (pathname == "/") {
          cssFilePath = "/css/wazzamStart.css";
       } else if (pathname == "/home") {
          cssFilePath = "/css/timeLine.css";
+      } else if (pathname == "/loginPage") {
+         cssFilePath = "/css/wazzamStart.css";
+      } else if (pathname == "/signup") {
+         cssFilePath = "/css/wazzamStart.css";
       } else {
          cssFilePath = "/css/timeLine.css";
       }
-
-      if (pathname == "/loginPage") {
-         cssFilePath = "/css/wazzamStart.css";
-      }
-      if (pathname == "/signup") {
-         cssFilePath = "/css/wazzamStart.css";
-      }
-      // writes html link to the html document using appropriate css path
       // creates the link element
       var linkElement = document.createElement('link');
+      // sets the link element attributes
+      linkElement.type = 'text/css';
       linkElement.rel = 'stylesheet';
       linkElement.href = cssFilePath;
-      linkElement.type = 'text/css';
       // appends the link element to the head section
       document.head.appendChild(linkElement);
    </script>
