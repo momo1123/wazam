@@ -37,7 +37,7 @@
                             <!-- todo: make this dynamic with a javascript file -->
                             <a class="w3-button w3-white w3-border comment-btn"
                                 href="/create-comment/{{id}}"><b>Comments</b>
-                                <span class="w3-badge">{{comments.length}}</span></a>
+                                <span class="w3-badge" id="comment-count-{{id}}">{{comments.length}}</span></a>
                         </div>
                     </div>
                 </div>
@@ -59,9 +59,10 @@
             <div class="w3-card w3-margin w3-margin-top">
                 <script id="wazzam-template" type="text/x-handlebars-template"></script>
                 <div class="content">
-                    <h4><b>My Name</b></h4>
-                    <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an
-                        interest in lorem ipsum and mauris neque quam blog. I want to share my world with you.</p>
+                    <h4><b>{{#if username}}{{username}}{{else}}Guest Account{{/if}}</b></h4>
+                    <p>It's me, Clark Kent, exploring the planet of Earth to prevent the same fate of Krypton. With my
+                        blue and red costume, and my superpowers, I fly around the orbit of Earth to fight against
+                        injustice, and to promote peace.</p>
                 </div>
             </div>
             <hr>
@@ -70,8 +71,11 @@
                     <h4>Popular Posts</h4>
                 </div>
                 <ul class="w3-ul w3-hoverable w3-white">
+                    {{#each posts}}
                     <li class="w3-padding-16">
+                        {{title}}
                     </li>
+                    {{/each}}
                     <!-- Repeat similar list items for other popular posts -->
                 </ul>
             </div>
