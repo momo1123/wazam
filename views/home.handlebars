@@ -7,14 +7,19 @@
         Please take a moment to login!
         {{/if}}
     </p>
-    <a class="w3-button w3-white w3-border" href="/login"><b>LOGIN</b></a>
+    {{#if username}}
+    <a class="w3-button w3-grey w3-border" href="/login"><b>LOGIN</b></a>
     <a class="w3-button w3-white w3-border" href="/logout"><b>LOGOUT</b></a>
+    {{else}}
+    <a class="w3-button w3-white w3-border" href="/login"><b>LOGIN</b></a>
+    <a class="w3-button w3-grey w3-border" href="/logout"><b>LOGOUT</b></a>
+    {{/if}}
 </header>
 <div class="w3-content" style="max-width: 1400px">
     <div class="w3-row">
         <main class="w3-col l8 s12">
             {{#each posts}}
-            <article class="w3-card-4 w3-margin w3-white">
+            <article class="w3-card-4 w3-margin w3-white" style="border-radius: 0.625rem">
                 <div class="content">
                     <h2><b>{{title}}</b></h2>
                     <p class="w3-opacity">{{time}}</p>

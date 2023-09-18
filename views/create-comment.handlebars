@@ -7,8 +7,13 @@
       Please take a moment to login!
       {{/if}}
    </p>
-   <a class="w3-button w3-white w3-border" href="/login"><b>LOGIN</b></a>
-   <a class="w3-button w3-white w3-border" href="/logout"><b>LOGOUT</b></a>
+   {{#if username}}
+    <a class="w3-button w3-grey w3-border" href="/login"><b>LOGIN</b></a>
+    <a class="w3-button w3-white w3-border" href="/logout"><b>LOGOUT</b></a>
+    {{else}}
+    <a class="w3-button w3-white w3-border" href="/login"><b>LOGIN</b></a>
+    <a class="w3-button w3-grey w3-border" href="/logout"><b>LOGOUT</b></a>
+    {{/if}}
 </header>
 <div class="w3-content" style="max-width: 1400px">
    <div>
