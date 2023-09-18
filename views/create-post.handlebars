@@ -1,3 +1,5 @@
+<script async src="/js/logout.js"></script>
+
 <header class="w3-container w3-center w3-padding-32">
    <h1 class="animated-header"><b>WAZZAM</b></h1>
    <p>Charge your social battery! <i class="fas fa-bolt"></i>
@@ -9,10 +11,10 @@
    </p>
    {{#if username}}
    <a class="w3-button w3-disabled w3-hover-grayscale w3-border" href="/login"><b>LOGIN</b></a>
-   <a class="w3-button w3-round w3-white w3-border" href="/logout"><b>LOGOUT</b></a>
+   <a class="w3-button w3-round w3-white w3-border" id="logout" href="/logout"><b>LOGOUT</b></a>
    {{else}}
    <a class="w3-button w3-round w3-white w3-border" href="/login"><b>LOGIN</b></a>
-   <a class="w3-button w3-disabled w3-hover-grayscale w3-border" href="/logout"><b>LOGOUT</b></a>
+   <a class="w3-button w3-disabled w3-hover-grayscale w3-border" id="logout" href="/logout"><b>LOGOUT</b></a>
    {{/if}}
 </header>
 <div class="w3-content backdrop-01" style="max-width: 1400px">
