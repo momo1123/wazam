@@ -166,14 +166,6 @@ router.get('/users/:id', async (req, res) => {
    }
 });
 // todo: check if this route is needed
-router.get('/loginPage', (req, res) => {
-   if (req.session.logged_in) {
-      res.redirect('/home');
-      return;
-   }
-   res.render('login');
-});
-// todo: check if this route is needed
 router.get('/signup', (req, res) => {
    if (req.session.exists) {
       res.redirect('/home');
