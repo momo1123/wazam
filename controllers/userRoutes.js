@@ -71,19 +71,23 @@ router.post('/signup', async (req, res) => {
       res.redirect('/');
       // this is for debugging purposes
    } catch (err) {
-      console.log('error message', err.message);
-      console.error(err);
+      // this is for debugging purposes
+      console.log(`catch (${err.message})`);
       res.status(500).json({ message: 'Server error' });
    }
 });
 
 router.post('/logout', (req, res) => {
-   if (req.session.logged_in) {
-      req.session.destroy(() => {
-         res.status(204).end();
-      });
-   } else {
-      res.status(404).end();
+   try {
+      if (req.session.logged_in) {
+         req.session.destroy(() => {
+            res.status(204).end();
+         });
+      }
+   } catch (err) {
+      // this is for debugging purposes
+      console.log(`catch (${err.message})`);
+      res.status(500).json(err);
    }
 });
 
