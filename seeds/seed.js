@@ -1,0 +1,82 @@
+const sequelize = require('../config/connection');
+const { User, Post, Comment } = require('../models');
+// adds a guest user
+const userData = [
+   {
+      name: 'Guest',
+      email: 'guest@example.com',
+      password: '00000000',
+   },
+];
+// adds a sample post
+const postData = [
+   {
+      time: new Date().toLocaleDateString('en-US', {
+         year: 'numeric',
+         month: 'long',
+         day: 'numeric',
+      }),
+      message:
+         'Superman, the very first super hero, is in a battle like never before, as he confronts his evil twin from a parallel universe. This doppelgänger has the same incredible powers, but uses them to accomplish sinister goals. With the fate of their respective worlds hanging in the balance, Superman must tap into his inner strength and outsmart his malevolent counterpart to restore peace and protect his beloved Earth.',
+      title: 'SuperMan vs. Superman',
+      user_id: 1,
+   },
+   {
+      time: new Date().toLocaleDateString('en-US', {
+         year: 'numeric',
+         month: 'long',
+         day: 'numeric',
+      }),
+      message:
+         'Superman is my favorite super hero. He can leap super high, fly, and has to fight the most dispicable villains in the DC universe',
+      title: 'Superman Rocks!',
+      user_id: 2,
+   },
+   {
+      time: new Date().toLocaleDateString('en-US', {
+         year: 'numeric',
+         month: 'long',
+         day: 'numeric',
+      }),
+      message:
+         'Superman is cool and all but Batman is definitely better because he doesnt rely on OP powers. Instead he uses his superior intelect and gadgets to overpower his adversaries.',
+      title: 'Batman vs Superman',
+      user_id: 3,
+   },
+   {
+      time: new Date().toLocaleDateString('en-US', {
+         year: 'numeric',
+         month: 'long',
+         day: 'numeric',
+      }),
+      message:
+         'Why do people hate Green Lantern...like I get it, the 2011 movie with Ryan Reynolds was bad, but that doesnt mean you should hate on everything Green Lantern.',
+      title: 'Green Lantern is great',
+      user_id: 4,
+   },
+   {
+      time: new Date().toLocaleDateString('en-US', {
+         year: 'numeric',
+         month: 'long',
+         day: 'numeric',
+      }),
+      message:
+         'The Joker is the most evil villain to exist, he doesnt have an agenda like most villains he exist to create pure chaos and watch everything burn.',
+      title: 'The Joker is scary',
+      user_id: 5,
+   },
+];
+// method for seeding the database
+const seedDatabase = async () => {
+   await sequelize.sync({ force: true });
+   await User.bulkCreate(userData, {
+      individualHooks: true,
+      returning: true,
+   });
+   await Post.bulkCreate(postData, {
+      returning: true,
+   });
+   process.exit(0);
+};
+
+seedDatabase();
