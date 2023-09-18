@@ -56,13 +56,24 @@ router.post('/login', async (req, res) => {
 
 router.post('/signup', async (req, res) => {
    try {
-      const userData = await fetch('/users', {
-         method: 'POST',
-         body: JSON.stringify({ name, email, password }),
-         headers: { 'Content-Type': 'application/json' },
+      // create a new user with the form data
+      const user = await User.create({
+         email: req.body.email,
+         name: req.body.username,
+         password: req.body.password,
       });
+
+      // sets up a session
+      req.session.user = user;
+
+      // send a message with success feedback
+      // res.status(200).json({ message: 'Signup successful!' });
+      res.redirect('/');
+      // this is for debugging purposes
    } catch (err) {
-      res.status(400).json(err);
+      console.log('error message', err.message);
+      console.error(err);
+      res.status(500).json({ message: 'Server error' });
    }
 });
 

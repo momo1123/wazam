@@ -150,6 +150,21 @@ router.post('/comment', async (req, res) => {
       res.status(500).json(err);
    }
 });
+// gets all of the users
+router.get('/users', async (req, res) => {
+   try {
+      // finds the current user with the selected id
+      const data = await User.findAll(req.params.id);
+      // converts the user into a plain object
+      const user = data.get({ plain: true });
+      // renders the user page with current user
+      res.render('user', { user });
+   } catch (err) {
+      // logs any errors
+      console.log(err);
+      res.status(500).json(err);
+   }
+});
 // gets one user with the selected id
 router.get('/users/:id', async (req, res) => {
    try {
