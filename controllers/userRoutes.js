@@ -54,6 +54,18 @@ router.post('/login', async (req, res) => {
    }
 });
 
+router.post('/signup', async (req, res) => {
+   try {
+      const userData = await fetch('/users', {
+         method: 'POST',
+         body: JSON.stringify({ name, email, password }),
+         headers: { 'Content-Type': 'application/json' },
+      });
+   } catch (err) {
+      res.status(400).json(err);
+   }
+});
+
 router.post('/logout', (req, res) => {
    if (req.session.logged_in) {
       req.session.destroy(() => {
