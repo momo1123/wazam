@@ -8,18 +8,18 @@
       {{/if}}
    </p>
    {{#if username}}
-   <a class="w3-button w3-grey w3-border" href="/login"><b>LOGIN</b></a>
-   <a class="w3-button w3-white w3-border" href="/logout"><b>LOGOUT</b></a>
+   <a class="w3-button w3-disabled w3-hover-grayscale w3-border" href="/login"><b>LOGIN</b></a>
+   <a class="w3-button w3-round w3-white w3-border" href="/logout"><b>LOGOUT</b></a>
    {{else}}
-   <a class="w3-button w3-white w3-border" href="/login"><b>LOGIN</b></a>
-   <a class="w3-button w3-grey w3-border" href="/logout"><b>LOGOUT</b></a>
+   <a class="w3-button w3-round w3-white w3-border" href="/login"><b>LOGIN</b></a>
+   <a class="w3-button w3-disabled w3-hover-grayscale w3-border" href="/logout"><b>LOGOUT</b></a>
    {{/if}}
 </header>
 <div class="w3-content backdrop-01" style="max-width: 1400px">
    <div id="wazzam-container">
       <div class="w3-row">
          <main class="w3-col l8 s12">
-            <article class="w3-card-4 w3-margin w3-white">
+            <article class="w3-card w3-round w3-margin w3-white">
                <form action="/post" method="POST">
                   <fieldset>
                      <label for="">Title</label>

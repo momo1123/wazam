@@ -8,38 +8,39 @@
       {{/if}}
    </p>
    {{#if username}}
-    <a class="w3-button w3-grey w3-border" href="/login"><b>LOGIN</b></a>
-    <a class="w3-button w3-white w3-border" href="/logout"><b>LOGOUT</b></a>
-    {{else}}
-    <a class="w3-button w3-white w3-border" href="/login"><b>LOGIN</b></a>
-    <a class="w3-button w3-grey w3-border" href="/logout"><b>LOGOUT</b></a>
-    {{/if}}
+   <a class="w3-button w3-disabled w3-hover-grayscale w3-border" href="/login"><b>LOGIN</b></a>
+   <a class="w3-button w3-round w3-white w3-border" href="/logout"><b>LOGOUT</b></a>
+   {{else}}
+   <a class="w3-button w3-round w3-white w3-border" href="/login"><b>LOGIN</b></a>
+   <a class="w3-button w3-disabled w3-hover-grayscale w3-border" href="/logout"><b>LOGOUT</b></a>
+   {{/if}}
 </header>
 <div class="w3-content" style="max-width: 1400px">
-   <div>
-      {{#each comments}}
+   {{#each comments}}
+   <div class="w3-row w3-padding w3-margin w3-card">
       <div>
-         {{message}}
+         Comment: {{message}}
       </div>
-      {{/each}}
    </div>
-   <div id="wazzam-container"></div>
-   <div class="w3-row">
-      <main class="w3-col l8 s12">
-         <article class="w3-card-4 w3-margin w3-white">
-            <form action="/comment" method="POST">
-               <fieldset>
-                  <label for="">Message</label>
-                  <input type="text" name="message">
-               </fieldset>
-               <input type="hidden" name="post_id" value="{{post_id}}">
-               <fieldset>
-                  <input type="submit" value="create comment">
-               </fieldset>
-            </form>
-         </article>
-         <hr>
-         <!-- Repeat the above article block for other blog entries -->
-      </main>
+   {{/each}}
+   <div id="wazzam-container">
+      <div class="w3-row">
+         <main class="w3-col l8 s12">
+            <article class="w3-card w3-round w3-margin w3-white">
+               <form action="/comment" method="POST">
+                  <fieldset>
+                     <label for="">Message</label>
+                     <input type="text" name="message">
+                  </fieldset>
+                  <input type="hidden" name="post_id" value="{{post_id}}">
+                  <fieldset>
+                     <input type="submit" value="create comment">
+                  </fieldset>
+               </form>
+            </article>
+            <hr>
+            <!-- Repeat the above article block for other blog entries -->
+         </main>
+      </div>
    </div>
 </div>

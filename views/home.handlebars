@@ -8,14 +8,14 @@
         {{/if}}
     </p>
     {{#if username}}
-    <a class="w3-button w3-grey w3-border" href="/login"><b>LOGIN</b></a>
-    <a class="w3-button w3-white w3-border" href="/logout"><b>LOGOUT</b></a>
+    <a class="w3-button w3-disabled w3-hover-grayscale w3-border" href="/login"><b>LOGIN</b></a>
+    <a class="w3-button w3-round w3-white w3-border" href="/logout"><b>LOGOUT</b></a>
     {{else}}
-    <a class="w3-button w3-white w3-border" href="/login"><b>LOGIN</b></a>
-    <a class="w3-button w3-grey w3-border" href="/logout"><b>LOGOUT</b></a>
+    <a class="w3-button w3-round w3-white w3-border" href="/login"><b>LOGIN</b></a>
+    <a class="w3-button w3-disabled w3-hover-grayscale w3-border" href="/logout"><b>LOGOUT</b></a>
     {{/if}}
 </header>
-<div class="w3-content" style="max-width: 1400px">
+<div class="w3-content w3-transparent" style="max-width: 1400px">
     <div class="w3-row">
         <main class="w3-col l8 s12">
             {{#each posts}}
