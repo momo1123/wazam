@@ -4,7 +4,7 @@
    "description": "Simple Blogging App",
    "main": "server.js",
    "scripts": {
-      "start": "node server.js",
+      "start": "node seeds/seed.js && node server.js",
       "seed": "node seeds/seed.js",
       "watch": "nodemon server.js",
       "sql": "mysql -u root -p wazzam_db"
