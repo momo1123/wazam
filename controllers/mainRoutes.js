@@ -166,7 +166,7 @@ router.get('/users/:id', async (req, res) => {
    }
 });
 // todo: check if this route is needed
-router.get('/loginPage', (req, res) => {
+router.get('/login', (req, res) => {
    if (req.session.logged_in) {
       res.redirect('/home');
       return;
