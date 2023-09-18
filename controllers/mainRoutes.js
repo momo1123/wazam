@@ -2,12 +2,10 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
-
 // get the root page
 router.get('/', (req, res) => {
    res.render('start');
 });
-
 // get all posts for homepage
 router.get('/home', async (req, res) => {
    // this is for debugging purposes
@@ -64,7 +62,11 @@ router.get('/post/:id', async (req, res) => {
 });
 // gets the create post page
 router.get('/create-post', (req, res) => {
-   res.render('create-post');
+   // finds all of the users
+   res.render('create-post', {
+      user_id: req.session.user_id,
+      username: req.session.user_name,
+   });
 });
 // posts a new post to the database
 router.post('/post', async (req, res) => {
@@ -88,9 +90,14 @@ router.get('/create-comment/:post_id', async (req, res) => {
    try {
       // finds the post with the selected id, includes comments
       const data = await Post.findByPk(req.params.post_id, {
-         include: {
-            model: Comment,
-         },
+         include: [
+            {
+               model: Comment,
+            },
+            {
+               model: User,
+            },
+         ],
       });
       // converts the post into a plain object
       const post = data.get({ plain: true });
@@ -100,6 +107,8 @@ router.get('/create-comment/:post_id', async (req, res) => {
       res.render('create-comment', {
          comments: post.comments,
          post_id: req.params.post_id,
+         user_id: req.session.user_id,
+         username: req.session.user_name,
       });
    } catch (err) {
       // logs any errors

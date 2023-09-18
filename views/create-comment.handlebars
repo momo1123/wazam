@@ -1,6 +1,14 @@
 <header class="w3-container w3-center w3-padding-32">
    <h1 class="animated-header"><b>WAZZAM</b></h1>
-   <p>Charge your social battery! <i class="fas fa-bolt"></i></p>
+   <p>Charge your social battery! <i class="fas fa-bolt"></i>
+      {{#if username}}
+      You are logged in as {{username}}.
+      {{else}}
+      Please take a moment to login!
+      {{/if}}
+   </p>
+   <a class="w3-button w3-white w3-border" href="/login"><b>LOGIN</b></a>
+   <a class="w3-button w3-white w3-border" href="/logout"><b>LOGOUT</b></a>
 </header>
 <div class="w3-content" style="max-width: 1400px">
    <div>
