@@ -168,7 +168,7 @@ Lastly, parts of the `HTML`, `CSS`, and `JS` code were created with knowledge ga
 
 ## _Heroku Deployment_
 
-This web application was deployed on [Heroku](https://blogging-platform-c14-0e7719a9e4b0.herokuapp.com/).
+This web application was deployed on [Heroku](https://wazzam-project2023-e8964739f705.herokuapp.com/).
 
 ## _License_
 
