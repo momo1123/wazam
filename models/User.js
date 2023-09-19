@@ -109,6 +109,7 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
+const checkPasswordStrength = require('check-password-strength');
 
 class User extends Model {
    checkPassword(loginPw) {
@@ -146,7 +147,13 @@ User.init(
    },
    {
       hooks: {
-         beforeCreate: async (newUserData) => {
+         beforeCreate: async function (newUserData) {
+            const passwordStrength = checkPasswordStrength.passwordStrength(
+               newUserData.password,
+            ).value;
+            console.log(
+               `checkPasswordStrength.passwordStrength(${passwordStrength})`,
+            );
             newUserData.password = await bcrypt.hash(newUserData.password, 10);
             return newUserData;
          },
